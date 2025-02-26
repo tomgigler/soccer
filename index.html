@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		    <meta charset="UTF-8">
-		        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-			    <title>Soccer Schedule</title>
-			        <script>
-					async function loadCSV() {
-						    try {
-							            console.log("Attempting to fetch schedule.csv...");
-							            const response = await fetch('schedule.csv');
-							            
-							            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-							            
-							            const text = await response.text();
-							            console.log("CSV Loaded Successfully:", text); // Debugging output
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Schedule</title>
+    <script>
+        async function loadCSV() {
+            try {
+                console.log("Attempting to fetch schedule.csv...");
+                const response = await fetch('schedule.csv');
 
-							            const rows = text.trim().split('\n').map(row => row.split(','));
-							            if (rows.length < 2) {
-									                console.error("CSV file seems empty or misformatted.");
-									                return;
-									            }
-							            
-							            const headers = rows.shift().map(h => h.trim());
-							            console.log("CSV Headers:", headers);
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
-							            let dates = new Set();
-							            rows.forEach(row => {
-									                let game = Object.fromEntries(headers.map((h, i) => [h, row[i]?.trim()]));
-									                console.log("Parsed Game Data:", game);
-									                dates.add(game.Date);
-									            });
+                const text = await response.text();
+                console.log("CSV Loaded Successfully:", text); // Debugging output
 
-							            console.log("Extracted Dates:", dates);
+                const rows = text.trim().split('\n').map(row => row.split(','));
+                if (rows.length < 2) {
+                    console.error("CSV file seems empty or misformatted.");
+                    return;
+                }
 
-							            const dateList = document.getElementById('date-list');
-							            if (!dateList) {
-									                console.error("Element with ID 'date-list' not found.");
-									                return;
-									            }
+                const headers = rows.shift().map(h => h.trim());
+                console.log("CSV Headers:", headers);
 
-							            dates = Array.from(dates).sort();
-							            dates.forEach(date => {
-									                let listItem = document.createElement('li');
-									                let link = document.createElement('a');
-									                link.href = `game_day.html?date=${date}`;
-									                link.innerText = date;
-									                listItem.appendChild(link);
-									                dateList.appendChild(listItem);
-									            });
+                let dates = new Set();
+                rows.forEach(row => {
+                    let game = Object.fromEntries(headers.map((h, i) => [h, row[i]?.trim()]));
+                    console.log("Parsed Game Data:", game);
+                    dates.add(game.Date);
+                });
 
-							        } catch (error) {
-									        console.error("Error loading CSV:", error);
-									    }
-					}
+                console.log("Extracted Dates:", dates);
+
+                const dateList = document.getElementById('date-list');
+                if (!dateList) {
+                    console.error("Element with ID 'date-list' not found.");
+                    return;
+                }
+
+                dates = Array.from(dates).sort();
+                dates.forEach(date => {
+                    let listItem = document.createElement('li');
+                    let link = document.createElement('a');
+                    link.href = `game_day.html?date=${date}`;
+                    link.innerText = date;
+                    listItem.appendChild(link);
+                    dateList.appendChild(listItem);
+                });
+
+            } catch (error) {
+                console.error("Error loading CSV:", error);
+            }
+        }
 
         document.addEventListener('DOMContentLoaded', loadCSV);
     </script>
-	</head>
-	<body>
-		    <h1>Soccer Schedule</h1>
-		        <ul id="date-list"></ul>
-	</body>
+</head>
+<body>
+    <h1>Soccer Schedule</h1>
+    <ul id="date-list"></ul>
+</body>
 </html>
 
