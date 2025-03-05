@@ -71,7 +71,7 @@ foreach ($schedule as $date => $games): ?>
 			<td><?php echo formatTime($game['StartTime']); ?></td>
 			<td><?php echo formatTime($game['EndTime']); ?></td>
 			<td><?php echo htmlspecialchars($game['Child']); ?></td>
-			<td><?php echo htmlspecialchars($game['Field']); ?></td>
+			<td><a href='spring-2025-field-map.png'><?php echo htmlspecialchars($game['Field']); ?></a></td>
 			<td><?php echo htmlspecialchars($game['Opponent']); ?></td>
 			<td><?php echo htmlspecialchars($game['Location']); ?></td>
 			<td><b><?php echo htmlspecialchars($game['Snack']); ?></b></td>
