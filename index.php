@@ -63,6 +63,7 @@ function readCSV($filename) {
 											                 <th>Field</th>
 													                <th>Opponent</th>
 														                       <th>Location</th>
+														                       <th></th>
 															                   </tr>
 															                <?php foreach ($games as $game): ?>
 														                     <tr>
@@ -72,6 +73,7 @@ function readCSV($filename) {
 								                       <td><?php echo htmlspecialchars($game['Field']); ?></td>
 					                        <td><?php echo htmlspecialchars($game['Opponent']); ?></td>
 		                     <td><?php echo htmlspecialchars($game['Location']); ?></td>
+		                     <td><b><?php echo htmlspecialchars($game['Snack']); ?></b></td>
                 </tr>
             <?php endforeach; ?>
 																								         </table>
