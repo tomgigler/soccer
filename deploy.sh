@@ -4,8 +4,8 @@
 cd /var/www/html/soccer || exit
 
 # Pull the latest changes
-git fetch origin main
-git reset --hard origin/main
+git fetch origin add-ghant
+git reset --hard origin/add-ghant
 
 # Set correct permissions for files
 chown -R www-data:www-data /var/www/html/soccer
