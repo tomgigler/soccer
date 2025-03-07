@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Gantt Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+
+        }
+        .gantt-container {
+            overflow-x: auto;
+            padding: 10px;
+            width: 95%;
+        }
+        .gantt-chart {
+            display: grid;
+            grid-template-columns: repeat(18, 1fr);
+            gap: 2px;
+            align-items: center;
+            width: 90%;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .gantt-header {
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+            background: #f3f3f3;
+            white-space: nowrap;
+        }
+        .gantt-bar {
+            height: 20px;
+            text-align: center;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;"><a href="index.php">Simple Gantt Chart</a></h2>
+    <div class="gantt-container">
+    <div class="gantt-chart">
+        <div class="gantt-header" style="grid-column: span 18;">March 8</div>
+        <div style="grid-column: span 5;"></div>
+        <div class="gantt-bar" style="grid-column: span 4; background: #22CC22;">Luke</div>
+        <div style="grid-column: span 9;"></div>
+
+        <div style="grid-column: span 12;"></div>
+        <div class="gantt-bar" style="grid-column: span 5; background: #2196F3;">Zack</div>
+        <div style="grid-column: span 1;"></div>
+
+        <div style="grid-column: span 12;"></div>
+        <div class="gantt-bar" style="grid-column: span 5; background: #CC0022;">Gage</div>
+        <div style="grid-column: span 1;"></div>
+
+        <div class="gantt-header" style="grid-column: span 18;">March 15</div>
+        <div style="grid-column: span 10;"></div>
+        <div class="gantt-bar" style="grid-column: span 4; background: #22CC22;">Luke</div>
+        <div style="grid-column: span 4;"></div>
+
+        <div style="grid-column: span 12;"></div>
+        <div class="gantt-bar" style="grid-column: span 5; background: #2196F3;">Zack</div>
+        <div style="grid-column: span 1;"></div>
+
+        <div style="grid-column: span 6;"></div>
+        <div class="gantt-bar" style="grid-column: span 5; background: #CC0022;">Gage</div>
+        <div style="grid-column: span 7;"></div>
+    </div>
+    </div>
+</body>
+</html>
