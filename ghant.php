@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Gantt Chart</title>
+    <title>Soccer Gantt Chart</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,7 +41,7 @@
     </style>
 </head>
 <body>
-    <h2 style="text-align: center;"><a href="index.php">Simple Gantt Chart</a></h2>
+    <h2 style="text-align: center;"><a href="index.php">Soccer Gantt Chart</a></h2>
     <div class="gantt-container">
     <div class="gantt-chart">
 <?php
