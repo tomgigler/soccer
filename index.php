@@ -5,7 +5,7 @@
 	<title>Soccer Schedule</title>
 </head>
 <body>
-	<h1><a href="ghant.php">Soccer Schedule</a></h1>
+	<h1><a href="ghant.php">Stupid Soccer Schedule</a></h1>
 <?php
 
 function readCSV($filename) {
