@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book List</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+    }
+    th {
+      background-color: #f2f2f2;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Book List</h1>
+  <table id="bookTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Rank</th>
+        <th onclick="sortTable(1)">Title</th>
+        <th onclick="sortTable(2)">Author</th>
+        <th onclick="sortTable(3)">Status</th>
+        <th onclick="sortTable(4)">Pages</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>ULYSSES</td><td>Joyce, James</td><td>Done</td><td>783</td></tr>
+      <tr><td>2</td><td>THE GREAT GATSBY</td><td>Fitzgerald, F. Scott</td><td>Done</td><td>240</td></tr>
+      <tr><td>3</td><td>A PORTRAIT OF THE ARTIST AS A YOUNG MAN</td><td>Joyce, James</td><td>Done</td><td>384</td></tr>
+      <tr><td>4</td><td>LOLITA</td><td>Nabokov, Vladimir</td><td>Done</td><td>336</td></tr>
+      <tr><td>5</td><td>BRAVE NEW WORLD</td><td>Huxley, Aldous</td><td>Done</td><td>288</td></tr>
+      <tr><td>6</td><td>THE SOUND AND THE FURY</td><td>Faulkner, William</td><td>Done</td><td>336</td></tr>
+      <tr><td>7</td><td>CATCH-22</td><td>Heller, Joseph</td><td>Done</td><td>464</td></tr>
+      <tr><td>8</td><td>DARKNESS AT NOON</td><td>Koestler, Arthur</td><td>Done</td><td>224</td></tr>
+      <tr><td>9</td><td>SONS AND LOVERS</td><td>Lawrence, D.H.</td><td></td><td>512</td></tr>
+      <tr><td>10</td><td>THE GRAPES OF WRATH</td><td>Steinbeck, John</td><td>Done</td><td>464</td></tr>
+      <tr><td>11</td><td>UNDER THE VOLCANO</td><td>Lowry, Malcolm</td><td></td><td>432</td></tr>
+      <tr><td>12</td><td>THE WAY OF ALL FLESH</td><td>Butler, Samuel</td><td>Done</td><td>448</td></tr>
+      <tr><td>13</td><td>1984</td><td>Orwell, George</td><td>Done</td><td>336</td></tr>
+      <tr><td>14</td><td>I, CLAUDIUS</td><td>Graves, Robert</td><td></td><td>480</td>
+      <tr><td>15</td><td>TO THE LIGHTHOUSE</td><td>Woolf, Virginia</td><td></td><td>228</td></tr>
+      <tr><td>16</td><td>AN AMERICAN TRAGEDY</td><td>Dreiser, Theodore</td><td>Done</td><td>934</td></tr>
+      <tr><td>17</td><td>THE HEART IS A LONELY HUNTER</td><td>McCullers, Carson</td><td></td><td>368</td></tr>
+      <tr><td>18</td><td>SLAUGHTERHOUSE-FIVE</td><td>Vonnegut, Kurt</td><td>Done</td><td>224</td></tr>
+      <tr><td>19</td><td>INVISIBLE MAN</td><td>Ellison, Ralph</td><td>Done</td><td>608</td></tr>
+      <tr><td>20</td><td>NATIVE SON</td><td>Wright, Richard</td><td>Done</td><td>528</td></tr>
+      <tr><td>21</td><td>HENDERSON THE RAIN KING</td><td>Bellow, Saul</td><td>Done</td><td>341</td></tr>
+      <tr><td>22</td><td>APPOINTMENT IN SAMARRA</td><td>O'Hara, John</td><td></td><td>272</td></tr>
+      <tr><td>23</td><td>U.S.A. (trilogy)</td><td>Dos Passos, John</td><td>Done</td><td>1312</td></tr>
+      <tr><td>24</td><td>WINESBURG, OHIO</td><td>Anderson, Sherwood</td><td>Done</td><td>256</td>
+      <tr><td>25</td><td>A PASSAGE TO INDIA</td><td>Forster, E.M.</td><td></td><td>368</td></tr>
+      <tr><td>26</td><td>THE WINGS OF THE DOVE</td><td>James, Henry</td><td></td><td>768</td></tr>
+      <tr><td>27</td><td>THE AMBASSADORS</td><td>James, Henry</td><td></td><td>528</td></tr>
+      <tr><td>28</td><td>TENDER IS THE NIGHT</td><td>Fitzgerald, F. Scott</td><td></td><td>320</td></tr>
+      <tr><td>29</td><td>THE STUDS LONIGAN TRILOGY</td><td>Farrell, James T.</td><td>Done</td><td>874</td></tr>
+      <tr><td>30</td><td>THE GOOD SOLDIER</td><td>Ford, Ford Madox</td><td>Done</td><td>352</td></tr>
+      <tr><td>31</td><td>ANIMAL FARM</td><td>Orwell, George</td><td>Done</td><td>144</td></tr>
+      <tr><td>32</td><td>THE GOLDEN BOWL</td><td>James, Henry</td><td>Done</td><td>592</td></tr>
+      <tr><td>33</td><td>SISTER CARRIE</td><td>Dreiser, Theodore</td><td></td><td>489</td></tr>
+      <tr><td>34</td><td>A HANDFUL OF DUST</td><td>Waugh, Evelyn</td><td>Done</td><td>320</td></tr>
+      <tr><td>35</td><td>AS I LAY DYING</td><td>Faulkner, William</td><td></td><td>288</td></tr>
+      <tr><td>36</td><td>ALL THE KING'S MEN</td><td>Warren, Robert Penn</td><td>Done</td><td>650</td></tr>
+      <tr><td>37</td><td>THE BRIDGE OF SAN LUIS REY</td><td>Wilder, Thornton</td><td></td><td>160</td></tr>
+      <tr><td>38</td><td>HOWARDS END</td><td>Forster, E.M.</td><td></td><td>336</td></tr>
+      <tr><td>39</td><td>GO TELL IT ON THE MOUNTAIN</td><td>Baldwin, James</td><td></td><td>224</td></tr>
+      <tr><td>40</td><td>THE HEART OF THE MATTER</td><td>Greene, Graham</td><td></td><td>288</td></tr>
+      <tr><td>41</td><td>LORD OF THE FLIES</td><td>Golding, William</td><td>Done</td><td>202</td></tr>
+      <tr><td>42</td><td>DELIVERANCE</td><td>Dickey, James</td><td>Done</td><td>288</td></tr>
+      <tr><td>43</td><td>A DANCE TO THE MUSIC OF TIME (series)</td><td>Powell, Anthony</td><td></td><td>3030</td></tr>
+      <tr><td>44</td><td>POINT COUNTER POINT</td><td>Huxley, Aldous</td><td></td><td>432</td></tr>
+      <tr><td>45</td><td>THE SUN ALSO RISES</td><td>Hemingway, Ernest</td><td>Done</td><td>256</td></tr>
+      <tr><td>46</td><td>THE SECRET AGENT</td><td>Conrad, Joseph</td><td>Done</td><td>240</td></tr>
+      <tr><td>47</td><td>NOSTROMO</td><td>Conrad, Joseph</td><td></td><td>480</td></tr>
+      <tr><td>48</td><td>THE RAINBOW</td><td>Lawrence, D.H.</td><td>Done</td><td>528</td></tr>
+      <tr><td>49</td><td>WOMEN IN LOVE</td><td>Lawrence, D.H.</td><td>Done</td><td>473</td></tr>
+      <tr><td>50</td><td>TROPIC OF CANCER</td><td>Miller, Henry</td><td>Done</td><td>318</td></tr>
+      <tr><td>51</td><td>THE NAKED AND THE DEAD</td><td>Mailer, Norman</td><td>Done</td><td>721</td></tr>
+      <tr><td>52</td><td>PORTNOY'S COMPLAINT</td><td>Roth, Philip</td><td>Done</td><td>304</td></tr>
+      <tr><td>53</td><td>PALE FIRE</td><td>Nabokov, Vladimir</td><td></td><td>320</td></tr>
+      <tr><td>54</td><td>LIGHT IN AUGUST</td><td>Faulkner, William</td><td></td><td>528</td></tr>
+      <tr><td>55</td><td>ON THE ROAD</td><td>Kerouac, Jack</td><td>Done</td><td>307</td></tr>
+      <tr><td>56</td><td>THE MALTESE FALCON</td><td>Hammett, Dashiell</td><td></td><td>224</td></tr>
+      <tr><td>57</td><td>PARADE'S END</td><td>Ford, Ford Madox</td><td></td><td>836</td></tr>
+      <tr><td>58</td><td>THE AGE OF INNOCENCE</td><td>Wharton, Edith</td><td></td><td>304</td></tr>
+      <tr><td>59</td><td>ZULEIKA DOBSON</td><td>Beerbohm, Max</td><td>Done</td><td>251</td></tr>
+      <tr><td>60</td><td>THE MOVIEGOER</td><td>Percy, Walker</td><td>Done</td><td>256</td></tr>
+      <tr><td>61</td><td>DEATH COMES FOR THE ARCHBISHOP</td><td>Cather, Willa</td><td></td><td>304</td></tr>
+      <tr><td>62</td><td>FROM HERE TO ETERNITY</td><td>Jones, James</td><td>Done</td><td>864</td></tr>
+      <tr><td>63</td><td>THE WAPSHOT CHRONICLES</td><td>Cheever, John</td><td></td><td>368</td></tr>
+      <tr><td>64</td><td>THE CATCHER IN THE RYE</td><td>Salinger, J.D.</td><td>Done</td><td>224</td></tr>
+      <tr><td>65</td><td>A CLOCKWORK ORANGE</td><td>Burgess, Anthony</td><td>Done</td><td>192</td></tr>
+      <tr><td>66</td><td>OF HUMAN BONDAGE</td><td>Maugham, W. Somerset</td><td>Done</td><td>656</td></tr>
+      <tr><td>67</td><td>HEART OF DARKNESS</td><td>Conrad, Joseph</td><td>Done</td><td>136</td></tr>
+      <tr><td>68</td><td>MAIN STREET</td><td>Lewis, Sinclair</td><td>Done</td><td>474</td></tr>
+      <tr><td>69</td><td>THE HOUSE OF MIRTH</td><td>Wharton, Edith</td><td></td><td>368</td></tr>
+      <tr><td>70</td><td>THE ALEXANDRIA QUARTET</td><td>Durell, Lawrence</td><td>Done</td><td>1087</td></tr>
+      <tr><td>71</td><td>A HIGH WIND IN JAMAICA</td><td>Hughes, Richard</td><td></td><td>279</td></tr>
+      <tr><td>72</td><td>A HOUSE FOR MR BISWAS</td><td>Naipaul, V.S.</td><td>Done</td><td>480</td></tr>
+      <tr><td>73</td><td>THE DAY OF THE LOCUST</td><td>West, Nathanael</td><td></td><td>208</td></tr>
+      <tr><td>74</td><td>A FAREWELL TO ARMS</td><td>Hemingway, Ernest</td><td>Done</td><td>336</td></tr>
+      <tr><td>75</td><td>SCOOP</td><td>Waugh, Evelyn</td><td></td><td>336</td></tr>
+      <tr><td>76</td><td>THE PRIME OF MISS JEAN BRODIE</td><td>Spark, Muriel</td><td></td><td>160</td></tr>
+      <tr><td>77</td><td>THE OLD WIVES' TALE</td><td>Joyce, James</td><td></td><td>672</td></tr>
+      <tr><td>78</td><td>KIM</td><td>Kipling, Rudyard</td><td>Done</td><td>307</td></tr>
+      <tr><td>79</td><td>A ROOM WITH A VIEW</td><td>Forster, E.M.</td><td></td><td>224</td></tr>
+      <tr><td>80</td><td>BRIDESHEAD REVISITED</td><td>Waugh, Evelyn</td><td>Done</td><td>351</td></tr>
+      <tr><td>81</td><td>THE ADVENTURES OF AUGIE MARCH</td><td>Bellow, Saul</td><td>Done</td><td>544</td></tr>
+      <tr><td>82</td><td>ANGLE OF REPOSE</td><td>Stegner, Wallace</td><td>Done</td><td>576</td></tr>
+      <tr><td>83</td><td>A BEND IN THE RIVER</td><td>Naipaul, V.S.</td><td></td><td>288</td></tr>
+      <tr><td>84</td><td>THE DEATH OF THE HEART</td><td>Bowen, Elizabeth</td><td></td><td>432</td></tr>
+      <tr><td>85</td><td>LORD JIM</td><td>Conrad, Joseph</td><td></td><td>377</td></tr>
+      <tr><td>86</td><td>RAGTIME</td><td>Doctorow, E.L.</td><td></td><td>270</td></tr>
+      <tr><td>87</td><td>THE OLD WIVES' TALE</td><td>Bennett, Arnold</td><td></td><td>624</td></tr>
+      <tr><td>88</td><td>THE CALL OF THE WILD</td><td>London, Jack</td><td>Done</td><td>128</td></tr>
+      <tr><td>89</td><td>LOVING</td><td>Green, Henry</td><td></td><td>248</td></tr>
+      <tr><td>90</td><td>MIDNIGHT'S CHILDREN</td><td>Rushdie, Salman</td><td></td><td>552</td></tr>
+      <tr><td>91</td><td>TOBACCO ROAD</td><td>Caldwell, Erskine</td><td>Done</td><td>184</td></tr>
+      <tr><td>92</td><td>IRONWEED</td><td>Kennedy, William</td><td>Done</td><td>240</td></tr>
+      <tr><td>93</td><td>THE MAGUS</td><td>Fowles, John</td><td></td><td>672</td></tr>
+      <tr><td>94</td><td>WIDE SARGASSO SEA</td><td>Rhys, Jean</td><td></td><td>190</td></tr>
+      <tr><td>95</td><td>UNDER THE NET</td><td>Murdoch, Iris</td><td></td><td>256</td></tr>
+      <tr><td>96</td><td>SOPHIE'S CHOICE</td><td>Styron, William</td><td>Done</td><td>576</td></tr>
+      <tr><td>97</td><td>THE SHELTERING SKY</td><td>Bowles, Paul</td><td>Done</td><td>368</td></tr>
+      <tr><td>98</td><td>THE POSTMAN ALWAYS RINGS TWICE</td><td>Cain, James M.</td><td></td><td>128</td></tr>
+      <tr><td>99</td><td>THE GINGER MAN</td><td>Donleavy, J.P.</td><td>Done</td><td>352</td></tr>
+      <tr><td>100</td><td>THE MAGNIFICENT AMBERSONS</td><td>Tarkington, Booth</td><td></td><td>288</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    function sortTable(columnIndex) {
+      const table = document.getElementById("bookTable");
+      const rows = Array.from(table.rows).slice(1); // exclude header
+      const isNumeric = !isNaN(rows[0].cells[columnIndex].innerText);
+      const direction = table.getAttribute('data-sort-dir') === 'asc' ? 'desc' : 'asc';
+
+      rows.sort((a, b) => {
+        const valA = a.cells[columnIndex].innerText;
+        const valB = b.cells[columnIndex].innerText;
+        if (isNumeric) {
+          return direction === 'asc' ? valA - valB : valB - valA;
+        } else {
+          return direction === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+        }
+      });
+
+      rows.forEach(row => table.tBodies[0].appendChild(row));
+      table.setAttribute('data-sort-dir', direction);
+    }
+  </script>
+</body>
+</html>
